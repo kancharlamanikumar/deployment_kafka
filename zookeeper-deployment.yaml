@@ -22,12 +22,6 @@ spec:
         - containerPort: 2181
         - containerPort: 2888
         - containerPort: 3888
-        lifecycle:
-          postStart:
-            exec:
-              command:
-                - "sh"
-                - "-c"
         env:
         - name: ALLOW_ANONYMOUS_LOGIN
           value: "yes"
