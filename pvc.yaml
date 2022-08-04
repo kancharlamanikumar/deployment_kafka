@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: kafka-storage
 spec:
-  storageClassName: kafka-volume
+  storageClassName: gold
   accessModes:
     - ReadWriteMany
   resources:
