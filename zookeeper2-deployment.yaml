@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crs-zookeeper
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zookeeper-cluster
+  template:
+    metadata:
+      labels:
+        component: zookeeper-cluster
+        app: zookeeper-cluster
+    spec:
+      containers:
+      - name: zookeeper
+        image: bitnami/zookeeper:latest
+        securityContext:
+          runAsUser: 0 
+        ports:
+        - containerPort: 2181
+        - containerPort: 2888
+        - containerPort: 3888
+        env:
+        - name: ALLOW_ANONYMOUS_LOGIN
+          value: "yes"
+        - name: ALLOW_PLAINTEXT_LISTENER
+          value: "yes" 
+        - name: ZOO_SERVERS
+          value: crs-zookeeper-2.zookeeper-cluster.default.svc.cluster.local:2888:3888
