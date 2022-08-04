@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crs-kafka
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+        app: kafka-cluster
+  template:
+    metadata:
+      labels:
+        app: kafka-cluster
+    spec:
+      hostname: kafka
+      containers:
+      - name: kafka
+        image: bitnami/kafka:2.6.0  
+        securityContext:
+          runAsUser: 0
+        resources:
+          requests:
+            memory: "1G"
+            cpu: "0.2"             
+        ports:
+         - containerPort: 9092
+        env:
+        - name: KAFKA_CFG_ZOOKEEPER_CONNECT
+          value: gke-cluster-2-default-pool-0fd08eee-7f05:2181
+        - name: ALLOW_ANONYMOUS_LOGIN
+          value: "yes"
+        - name: ALLOW_PLAINTEXT_LISTENER
+          value: "yes" 
