@@ -3,9 +3,9 @@ kind: PersistentVolumeClaim
 metadata:
   name: kafka-storage
 spec:
-  storageClassName: gold
+  storageClassName: default-storage
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   resources:
     requests:
       storage: 50Gi
