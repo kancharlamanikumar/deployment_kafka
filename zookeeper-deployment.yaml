@@ -28,8 +28,6 @@ spec:
               command:
                 - "sh"
                 - "-c"
-                - >
-                  echo $(( $(cat /etc/hosts | grep zookeeper | awk '{print($1)}' | awk '{split($0,array,"-")} END{print array[1]}') + 1 )) > /bitnami/zookeeper/data/myid
         env:
         - name: ALLOW_ANONYMOUS_LOGIN
           value: "yes"
