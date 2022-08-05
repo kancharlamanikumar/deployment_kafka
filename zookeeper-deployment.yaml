@@ -42,7 +42,7 @@ spec:
         - name: ALLOW_PLAINTEXT_LISTENER
           value: "yes" 
         - name: ZOO_DATA_DIR
-          value: /bitnami/zookeeper/data/zkserver1
+          value: "${ZOO_VOLUME_DIR}/data/zkserver1"
         - name: dataLogDir
           value: /opt/atom/zookeeper/log/zkServer1
         - name: ZOO_SERVERS
