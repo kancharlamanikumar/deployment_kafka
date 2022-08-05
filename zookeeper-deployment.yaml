@@ -44,7 +44,7 @@ spec:
       #  - name: ZOO_DATA_DIR
        #   value: zkserver1
         - name: ZOO_DATA_LOG_DIR
-          value: "/bitnami/zookeeper"
+          value: /bitnami/zookeeper
         - name: ZOO_SERVERS
           value: crs-zookeeper-0.zookeeper-cluster.default.svc.cluster.local:2888:3888
         volumeMounts:
