@@ -32,9 +32,9 @@ spec:
         - name: ALLOW_PLAINTEXT_LISTENER
           value: "yes" 
         volumeMounts:
-            - name: kafka-storage1
+            - name: kafka-storage
               mountPath: /bitnami/zookeeper
       volumes:
-        - name: kafka-storage1
+        - name: kafka-storage
           persistentVolumeClaim:
               claimName: kafka-storage
