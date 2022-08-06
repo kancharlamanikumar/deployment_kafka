@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: kafka-storage1
 spec:
-  storageClassName: default-storage1
+  storageClassName: default-storage
   accessModes:
     - ReadWriteOnce
   resources:
