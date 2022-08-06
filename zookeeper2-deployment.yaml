@@ -27,8 +27,8 @@ spec:
             command:
             - /opt/bitnami/zookeeper/bin/zkCli.sh
           initialDelaySeconds: 10
-          timeoutSeconds: 2
-          periodSeconds: 5
+          timeoutSeconds: 20
+          periodSeconds: 10
         livenessProbe:
           exec:
             command:
