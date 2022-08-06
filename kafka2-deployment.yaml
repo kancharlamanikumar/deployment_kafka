@@ -31,6 +31,10 @@ spec:
           value: "yes"
         - name: ALLOW_PLAINTEXT_LISTENER
           value: "yes" 
+        - name: KAFKA_CFG_ADVERTISED_LISTENERS
+          value: PLAINTEXT://:9094
+        - name: KAFKA_CFG_LISTENERS
+          value: PLAINTEXT://:9094
         volumeMounts:
             - name: kafka-storage
               mountPath: /bitnami/zookeeper
