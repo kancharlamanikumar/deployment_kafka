@@ -45,7 +45,7 @@ spec:
           value: "5"
         - name: ZOO_SYNC_LIMIT
           value: "2"
-        - name: ZOO_PORT_NUMBERT
+        - name: ZOO_PORT_NUMBER
           value: 2182
         - name: ZOO_SERVERS
           value: crs-zookeeper-1.zookeeper-cluster.default.svc.cluster.local:2889:3889
