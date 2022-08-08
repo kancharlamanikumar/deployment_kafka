@@ -45,10 +45,6 @@ spec:
           value: "5"
         - name: ZOO_SYNC_LIMIT
           value: "2"
-        - name: ZOO_DATA_DIR
-          value: /bitnami/zookeeper/data/zkserver1
-        - name: ZOO_DATA_LOG_DIR
-          value: "yes"
         - name: ZOO_SERVERS
           value: 10.158.0.7:2888:3888
         volumeMounts:
