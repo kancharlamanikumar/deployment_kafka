@@ -26,16 +26,16 @@ spec:
           exec:
             command:
             - /opt/bitnami/zookeeper/bin/zkCli.sh
-          initialDelaySeconds: 10
-          timeoutSeconds: 5
-          periodSeconds: 10
+          initialDelaySeconds: 20
+          timeoutSeconds: 20
+          periodSeconds: 5
         livenessProbe:
           exec:
             command:
             - /opt/bitnami/zookeeper/bin/zkCli.sh
-          initialDelaySeconds: 10
-          timeoutSeconds: 5
-          periodSeconds: 10
+          initialDelaySeconds: 20
+          timeoutSeconds: 20
+          periodSeconds: 5
         env:
         - name: ALLOW_ANONYMOUS_LOGIN
           value: "yes"
