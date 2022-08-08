@@ -19,23 +19,23 @@ spec:
         securityContext:
           runAsUser: 0 
         ports:
-        - containerPort: 2182
-        - containerPort: 2889
-        - containerPort: 3889
+        - containerPort: 2181
+        - containerPort: 2888
+        - containerPort: 3888
         readinessProbe:
           exec:
             command:
             - /opt/bitnami/zookeeper/bin/zkCli.sh
           initialDelaySeconds: 10
-          timeoutSeconds: 2
-          periodSeconds: 5
+          timeoutSeconds: 5
+          periodSeconds: 10
         livenessProbe:
           exec:
             command:
             - /opt/bitnami/zookeeper/bin/zkCli.sh
-          initialDelaySeconds: 120
-          timeoutSeconds: 2
-          periodSeconds: 5
+          initialDelaySeconds: 10
+          timeoutSeconds: 5
+          periodSeconds: 10
         env:
         - name: ALLOW_ANONYMOUS_LOGIN
           value: "yes"
@@ -45,10 +45,8 @@ spec:
           value: "5"
         - name: ZOO_SYNC_LIMIT
           value: "2"
-        - name: ZOO_PORT_NUMBER
-          value: 2182
         - name: ZOO_SERVERS
-          value: crs-zookeeper-1.zookeeper-cluster.default.svc.cluster.local:2889:3889
+          value: 10.158.0.7:2888:3888
         volumeMounts:
             - name: kafka-storage
               mountPath: /bitnami/zookeeper
