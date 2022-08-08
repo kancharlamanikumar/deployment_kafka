@@ -47,10 +47,10 @@ spec:
           value: "2"
         - name: ZOO_DATA_DIR
           value: /bitnami/zookeeper/data/zkserver1
-        - name: "yes"
-          value: /bitnami/zookeeper/log/zkserver1
+        - name: ZOO_DATA_LOG_DIR
+          value: "yes"
         - name: ZOO_SERVERS
-          value: crs-zookeeper-0.zookeeper-cluster.default.svc.cluster.local:2888:3888
+          value: 10.158.0.7:2888:3888
         volumeMounts:
             - name: kafka-storage
               mountPath: /bitnami/zookeeper
