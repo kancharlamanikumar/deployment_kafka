@@ -46,7 +46,7 @@ spec:
         - name: ZOO_SYNC_LIMIT
           value: "2"
         - name: ZOO_DATA_DIR
-          value: "${ZOO_VOLUME_DIR}/data/zkserver1
+          value: "${ZOO_VOLUME_DIR}/data/zkserver1"
         - name: ZOO_SERVERS
           value: crs-zookeeper-0.zookeeper-cluster.default.svc.cluster.local:2888:3888
         volumeMounts:
