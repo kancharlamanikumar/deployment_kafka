@@ -19,9 +19,9 @@ spec:
         securityContext:
           runAsUser: 0 
         ports:
-        - containerPort: 2181
-        - containerPort: 2888
-        - containerPort: 3888
+        - containerPort: 2182
+        - containerPort: 2889
+        - containerPort: 3889
         readinessProbe:
           exec:
             command:
@@ -42,7 +42,7 @@ spec:
         - name: ALLOW_PLAINTEXT_LISTENER
           value: "yes" 
         - name: ZOO_SERVERS
-          value: crs-zookeeper-1.zookeeper-cluster.default.svc.cluster.local:2888:3888
+          value: crs-zookeeper-1.zookeeper-cluster.default.svc.cluster.local:2889:3889
         volumeMounts:
             - name: kafka-storage
               mountPath: /bitnami/zookeeper
